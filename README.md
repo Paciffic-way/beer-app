@@ -1,3 +1,6 @@
+This app will display beers from punkbeer API, based on the food input provided by the user.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

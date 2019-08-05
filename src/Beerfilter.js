@@ -8,31 +8,34 @@ class Beerfilter extends Component {
     };
   }
 
-
   foodLoop() {
-    const allBeers = this.props.beerprops;
+    var allBeers = this.props.beerprops;
+    let newArray = [];
     var arrayLength = allBeers.length;
 
+    console.log("array length is ", arrayLength);
+
     for (let j = 0; j < arrayLength; j++) {
-      allBeers[j].food_pairing.map((item, key) => {
-        return  console.log(item);
-      });
+     newArray.push(
+        allBeers[j].food_pairing.map((item, key) => <p className="legend">{" " ,item}</p>)
+      );
     }
+    var newLoop = newArray.map((item, key) => {
+      return item;
+    });
+
+    return newLoop;
   }
 
   render() {
-    const dummy = this.props.beerprops;
-      const beers = dummy.map((item, key) => {
-      return (
-        <div key={item.id}>
-          {item.id} {item.name} {item.tagline}
-        </div>
-      );
-    });
+ 
+
+
     return (
       <div className="filteredbeers">
-
-   {beers}
+        <h2>Available foods to type :</h2>
+        <div className="legend-container">{this.foodLoop()}</div>
+        
       </div>
     );
   }

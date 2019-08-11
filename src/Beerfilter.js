@@ -16,8 +16,10 @@ class Beerfilter extends Component {
     console.log("array length is ", arrayLength);
 
     for (let j = 0; j < arrayLength; j++) {
-     newArray.push(
-        allBeers[j].food_pairing.map((item, key) => <p className="legend">{" " ,item}</p>)
+      newArray.push(
+        allBeers[j].food_pairing.map((item, key) => (
+          <p className="legend">{(" ", item)}</p>
+        ))
       );
     }
     var newLoop = newArray.map((item, key) => {
@@ -28,14 +30,10 @@ class Beerfilter extends Component {
   }
 
   render() {
- 
-
-
     return (
       <div className="filteredbeers">
         <h2>Available foods to type :</h2>
         <div className="legend-container">{this.foodLoop()}</div>
-        
       </div>
     );
   }

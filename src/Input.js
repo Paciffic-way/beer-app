@@ -17,6 +17,11 @@ class Input extends Component {
     this.makeApiCall(this.state.searchValue);
   };
 
+  liftUp = item => {
+    this.props.fetchedbeers(item);
+    console.log("przekazane piwa to ", item);
+  };
+
   makeApiCall = searchInput => {
     var searchUrl = `https://api.punkapi.com/v2/beers?food=${searchInput}`;
     fetch(searchUrl)
@@ -25,12 +30,14 @@ class Input extends Component {
       })
       .then(jsonData => {
         this.setState({ meals: jsonData });
+        this.liftUp(jsonData);
       });
   };
 
   render() {
     return (
       <div className="inputform">
+        <div className="logo">Beer App</div>
         <input
           name="text"
           type="text"
@@ -38,31 +45,18 @@ class Input extends Component {
           onChange={event => this.handleOnChange(event)}
           value={this.state.searchValue}
           onKeyPress={event => {
-            if (event.key === "Enter") {
+            if (event.key === "Enter" && this.state.searchValue) {
               this.handleSearch();
             }
           }}
         />
 
-        <button onClick={this.handleSearch}>Search</button>
-
-        
-
-        {this.state.meals ? (
-          <div className="flex-container">
-            {this.state.meals.map((beer, index) => (
-              <div className="beersugg" key={index}>
-                <p>{beer.name}</p>
-                <img
-                  className="beerimg"
-                  src={beer.image_url}
-                  alt="meal-thumbnail"
-                />
-              </div>
-            ))}
-          </div>
+        {this.state.searchValue ? (
+          <button className="button" onClick={this.handleSearch}>
+            Search
+          </button>
         ) : (
-          <p>Try searching for a meal</p>
+          <button className="button">Search</button>
         )}
       </div>
     );

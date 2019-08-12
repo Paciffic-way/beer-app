@@ -37,7 +37,7 @@ class Input extends Component {
   render() {
     return (
       <div className="inputform">
-        <div className="logo">Beer App</div>
+        <div className="logo"></div>
         <input
           name="text"
           type="text"

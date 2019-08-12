@@ -50,9 +50,11 @@ class App extends Component {
         )}
 
         <div className="flex-horizontal-wrapper">
-          <Staticinfo />
-          { this.state.fetchedbeers ?  <Retrievedbeers meals={this.state.fetchedbeers} /> : ""        }
+         
+          { this.state.fetchedbeers ?  <Staticinfo /> : ""        }
+          { this.state.fetchedbeers ?  <Retrievedbeers meals={this.state.fetchedbeers} /> : <div className="information-empty">Please type the food in searchbar</div>   }
         </div>
+        <div className="footer">Footer</div>
       </div>
     );
   }

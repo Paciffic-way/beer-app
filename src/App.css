@@ -1,111 +1,260 @@
 .App {
   text-align: center;
 }
-
+body {
+  box-sizing: content-box;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
+h2 {
+  margin-left: 80px;
+  color: lightgray;
+  font-family: "Medula One", cursive;
+  font-size: 50px;
+  font-weight: 200;
+  max-height: 60px;
+  min-width: 320px;
 
-.flex-container{
+  animation-name: slideIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.8s;
+}
+
+p {
+  font-family: "Lora", serif;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  font-size: 24px;
+}
+.flex-container {
+  overflow-y: hidden;
+  padding: 30px 0px 30px 0px;
   min-width: 70vw;
-  max-width: 70vw;
-
+  max-width: 79vw;
+  align-items: center;
   max-height: 500px;
-  
-  overflow: scroll;
- 
-   display: flex;
+  display: flex;
+}
+
+.confirmation-text{
+  margin-left: 80px;
+  margin-right: 10vw;
+  min-width: 14vw;
+  text-align: end;
+  color: #1b0b0b;
+  font-family: "Medula One", cursive;
+  font-size: 6vh;
+  font-weight: 200;
 }
 
 .beersugg {
-  flex-direction: row;
-  min-width: 200px;
-  max-width: 200px;
-  height: 350px;
-  background-color: rgb(224, 224, 224);
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  max-width: 220px;
+  align-content: center;
+  justify-content: flex-end;
+  height: 450px;
+  background-color: white;
   padding: 10px 50px 10px 50px;
- margin: 20px 20px 0px 20px;
+  margin-block-end: 10px;
+  margin-inline-end: 40px;
   opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
 }
+.information-empty{
 
+  font-family: "Lora", serif;
+  height: 60vh;
+  align-items: center;
+  
+  
+  font-size: 35px;
+  color:#9d8d84;
+  margin:auto;
+  display: flex;
 
+}
 .staticinfo {
-
-  min-width: 30vw;
+  width: 18vw;
+  margin-right: 40px;
 }
 
-.flex-horizontal-wrapper
-
-{
+.flex-horizontal-wrapper {
   display: flex;
   flex-direction: row;
-
+  background-color: #faf8f4;
 }
 
 .legend {
-  line-height: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
+  padding-inline-end: 20px;
+  line-height: 20px;
+  font-family: "Lora", serif;
+  font-weight: 500;
+  font-size: 16px;
   display: flex;
+  color: white;
   min-width: 200px;
   flex-direction: row;
 }
+.hopimg {
+  height: 44vh;
 
-.beerimg {
-  max-width: 40px;
+  animation-name: slideIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.8s;
 }
-.filteredbeers{
-display:flex; }
+.beerimg {
+  max-width: 60px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 
-input[type=text] {
-width: 400px;
-margin: 50px 0px 50px 0px;
+}
+.filteredbeers {
+  display: flex;
+  background-color: #1b0b0b;
+
+  
+}
+
+input[type="text"] {
+  
+  width: 80vw;
+  height: 10vh;
+  opacity: 0.9;
+  border: none;
+  margin-left: auto;
+  font-family: "Lora", serif;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-weight: 500;
+  font-size: 35px;
+  background-color: white;
+  background-image: url("../src/img/search.svg");
+  background-size: 20px 20px;
+  background-position: 2.5% 53%;
+  background-repeat: no-repeat;
+  padding-left: 4vw;
+
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
 
 
-background-color: white;
-background-image: url('../src/img/logo.svg');
-background-position: 10px 10px; 
-background-repeat: no-repeat;
-padding-left: 40px;
-
+button:focus,
+input:focus {
+  outline: none;
 }
 
 .button {
-  background-color: lightgray;
+  cursor: pointer;
+  background-color: #faf8f4;
   border: none;
-  margin: 50px 0px 50px 0px;
+  width: 6vw;
+  font-family: "Lora", serif;
+  height: 10vh;
+  font-weight: 500;
+  margin: 50px 80px 50px 0px;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
 
 }
-.logo{
-  margin: 40px 40px 40px 40px;
+.button:hover {
+  background-color: #f2eee6;
+  /* cursor: pointer;
+  
+  border: none;
+  
+  font-family: "Lora", serif;
+  height: 10vh;
+  font-weight: 500;
+  margin: 50px 80px 50px 0px;
+  padding-bottom: 0;
+  padding-top: 0; */
 }
 
-.inputform{
-  display:flex;
+.logo {
+  display: flex;
+  width: 500px;
+  align-self: center;
+  height: 12vh;
+  background-size: contain;
+  background-image: url("../src/img/logo.svg");
+  background-repeat: no-repeat;
+  margin: 40px 40px 40px 80px;
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+.inputform {
+  
+  display: flex;
+  align-items: center;
   flex-direction: row;
-  min-height: 15vh;
+  min-height: 25vh;
+  background-image: url("../src/img/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 
   background-color: grey;
 }
 .legend-container {
-  overflow: scroll;
+  overflow: hidden;
   max-height: 200px;
-  width:80vw;
+  padding-left: 2vw;
   display: flex;
   margin-left: auto;
   flex-direction: row;
-  background-color: lightgray;
+  background-color: #1b0b0b;
 
+  animation-name: slideIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.8s;
 
 }
 
+.footer {
+  display: flex;
+  position: fixed;
+  bottom:0px;
+  width:100%;
+  min-height: 70px;
+  background-color: #ede8e3;
+  font-family: "Medula One", cursive;
+  font-weight: 200;
+  font-size: 28px;
+  height: 70px;
+  color: #c7b4a5;
+  align-items: center;
+  padding-left: 30px;
+
+
+ 
+ 
+}
 
 .App-header {
   background-color: #282c34;
@@ -122,16 +271,14 @@ padding-left: 40px;
   color: #61dafb;
 }
 
-
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -140,4 +287,47 @@ padding-left: 40px;
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes slideDown {
+	0% {
+	  transform: translateY(-20px);
+	  opacity: 0;
+
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-20px);
+      opacity: 0;
+  
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    }
+
+
+.flex-container::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.flex-container::-webkit-scrollbar-track {
+  height: 44px;
+  background: #e2e0db;
+}
+
+.flex-container::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+.flex-container::-webkit-scrollbar-thumb:hover {
+  background: #453636;
 }

@@ -13,18 +13,19 @@ class Retrievedbeers extends Component {
     console.log("jakie to propsy ma", dummy);
 
     return (
-       
-      <div >
+
+      <div>
         {dummy ? (
           <div className="flex-container">
             {dummy.map((beer, index) => (
               <div className="beersugg" key={index}>
-                <p>{beer.name}</p>
+                
                 <img
                   className="beerimg"
                   src={beer.image_url}
                   alt="meal-thumbnail"
                 />
+                <p>{beer.name}</p>
               </div>
             ))}
           </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import hop from '../src/img/hop.png'
 
 class Staticinfo extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class Staticinfo extends Component {
   render() {
     return (
       <div className="staticinfo">
-        <h2>Something that you typed</h2>
+        <h2 className="confirmation-text">Results of your search:</h2>
+        <img className="hopimg" src={hop}  alt="hop-graphic" ></img>
       </div>
     );
   }

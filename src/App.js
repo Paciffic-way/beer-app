@@ -30,7 +30,6 @@ class App extends Component {
   //Setting the state taken from props of Input.js
   handleFetchedBeers(item) {
     this.setState({ fetchedbeers: item });
-    console.log("sprawdzmy czy są tu piwa", this.state.fetchedbeers);
   }
 
   componentDidMount() {

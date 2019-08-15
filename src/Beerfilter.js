@@ -7,8 +7,6 @@ class Beerfilter extends Component {
     let newArray = [];
     var arrayLength = allBeers.length;
 
-    console.log("array length is ", arrayLength);
-
     for (let j = 0; j < arrayLength; j++) {
       //Pushes all the mapped paragraphs to newArray
       newArray.push(

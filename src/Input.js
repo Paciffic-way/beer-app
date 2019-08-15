@@ -16,10 +16,9 @@ class Input extends Component {
   handleSearch = () => {
     this.makeApiCall(this.state.searchValue);
   };
-//Lifting the state up to App.js
+  //Lifting the state up to App.js
   liftUp = item => {
     this.props.fetchedbeers(item);
-    console.log("przekazane piwa to ", item);
   };
 
   //Getting beers from API that match the input
@@ -32,15 +31,12 @@ class Input extends Component {
       })
       .then(jsonData => {
         if (jsonData.length === 0) {
-        this.setState({ meals: "nothing" });
-        this.liftUp("nothing");
-
-        }
-
-        else {
-
+          //When nothing returns, set the state as "nothing" string and lift it, this way "App.js" knows there was no search result, but still runs to show the error
+          this.setState({ meals: "nothing" });
+          this.liftUp("nothing");
+        } else {
           this.setState({ meals: jsonData });
-        this.liftUp(jsonData);
+          this.liftUp(jsonData);
         }
       });
   };
@@ -48,7 +44,7 @@ class Input extends Component {
   render() {
     return (
       <div className="inputform">
-        <div className="logo"></div>
+        <div className="logo" />
         <input
           name="text"
           type="text"
@@ -56,15 +52,15 @@ class Input extends Component {
           onChange={event => this.handleOnChange(event)}
           value={this.state.searchValue}
           onKeyPress={event => {
+            //If searchbar is empty, do nothing (for enter keypress)
             if (event.key === "Enter" && this.state.searchValue) {
               this.handleSearch();
             }
           }}
         />
 
-        {
-         //If searchbar is empty, do nothing 
-          this.state.searchValue ? (
+        {//If searchbar is empty, do nothing (for clickdown on button)
+        this.state.searchValue ? (
           <button className="button" onClick={this.handleSearch}>
             Search
           </button>

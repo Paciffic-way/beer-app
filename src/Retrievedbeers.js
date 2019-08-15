@@ -5,7 +5,6 @@ class Retrievedbeers extends Component {
 
   render() {
     let dummy = this.props.meals;
-    console.log("jakie to propsy ma", dummy);
     const noresult = this.props.meals === "nothing";
 
 

@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 
 class Beerfilter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      beers: []
-    };
-  }
-
+  //Function mapping and displaying all the food pairings from all the beers, I decided to add this so the user knows what foods are available to search/type
   foodLoop() {
     var allBeers = this.props.beerprops;
     let newArray = [];
@@ -16,17 +10,15 @@ class Beerfilter extends Component {
     console.log("array length is ", arrayLength);
 
     for (let j = 0; j < arrayLength; j++) {
+      //Pushes all the mapped paragraphs to newArray
       newArray.push(
+        //Maps through every array and displays food pairings ^
         allBeers[j].food_pairing.map((item, key) => (
           <p className="legend">{(" ", item)}</p>
         ))
       );
     }
-    var newLoop = newArray.map((item, key) => {
-      return item;
-    });
-
-    return newLoop;
+    return newArray;
   }
 
   render() {

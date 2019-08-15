@@ -1,38 +1,60 @@
 import React, { Component } from "react";
 
 class Retrievedbeers extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      beers: []
-    };
-  }
+ 
 
   render() {
     let dummy = this.props.meals;
     console.log("jakie to propsy ma", dummy);
+    const noresult = this.props.meals === "nothing";
+
 
     return (
-
       <div>
-        {dummy ? (
+        {noresult ? (
+          //If nothing found
+          <h5>Sorry, nothing found</h5>
+        ) : (
+          //else - generate scrollable flexcontainer with beers
           <div className="flex-container">
-            {dummy.map((beer, index) => (
+            {//Mapping beers to divs, with basic title, subtitle and image
+            dummy.map((beer, index) => (
               <div className="beersugg" key={index}>
-                
-                <img
-                  className="beerimg"
-                  src={beer.image_url}
-                  alt="meal-thumbnail"
-                />
-                <p>{beer.name}</p>
+                 <div className="alcohol">{beer.abv}%</div>
+                <div className="beerimg-container">
+                                   <img
+                    className="beerimg"
+                    src={beer.image_url}
+                    alt="meal-thumbnail"
+                  />{" "}
+                </div>
+                <h3>{beer.name}</h3>
+                <h4>Ingredients:</h4>
+                <div className="ingredients-container">
+                  
+
+                  {//Mapping all the hops
+                  beer.ingredients.hops.map((beer, index) => (
+                    <p className="ingredients">{beer.name},</p>
+                  ))}
+
+                  {//Mapping the malt
+                  beer.ingredients.malt.map((beer, index) => (
+                    <p className="ingredients">{beer.name},</p>
+                  ))}
+
+                  {//Mapping all the yeasts
+                    <p className="ingredients">{beer.ingredients.yeast}</p>
+                  }
+                </div>
               </div>
             ))}
           </div>
-        ) : (
-          <p>Try searching for a meal</p>
-        )}
-      </div> 
+        ) 
+      
+      
+      }
+      </div>
     );
   }
 }

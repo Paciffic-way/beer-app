@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+
+.beers {
+  max-height: 100%;
+
+}
 body {
   box-sizing: content-box;
 }
@@ -11,13 +16,19 @@ body {
 }
 
 h2 {
-  margin-left: 80px;
+ 
+  margin: 0;
   color: lightgray;
   font-family: "Medula One", cursive;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 200;
   max-height: 60px;
   min-width: 320px;
+display: flex;
+align-content: flex-end;
+align-self: center;
+justify-content: center;
+  
 
   animation-name: slideIn;
   animation-iteration-count: 1;
@@ -34,18 +45,120 @@ p {
   display: flex;
   font-size: 24px;
 }
+
+h3 {
+  font-family: "Lora", serif;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  font-size: 26px;
+  margin: 25px 0 15px 0;
+  font-weight: 200;
+}
+
+h4 {
+  font-family: "Lora", serif;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  font-weight: 200;
+  color: #978686;
+}
+
+h5 {
+  color: #9d8d84;
+  font-family: "Lora", serif;
+  height: 60vh;
+  width: 80vw;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  font-size: 35px;
+    margin: auto;
+  display: flex;
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.8s;
+}
+
+.ingredients {
+  font-family: "Lora", serif;
+  align-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  margin: 3px 0px 3px 5px;
+}
+.ingredients-container {
+  align-content: flex-start;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  max-height: 195px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+}
+
 .flex-container {
   overflow-y: hidden;
   padding: 30px 0px 30px 0px;
   min-width: 70vw;
   max-width: 79vw;
   align-items: center;
-  max-height: 500px;
+  max-height: 54vh;
+
   display: flex;
 }
 
-.confirmation-text{
+
+
+.alcohol{
+  display: flex;
+ font-size: 18px;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: -10px;
+  color: #d1c7c2;
+  font-family: "Lora", serif;
+  width:60px;
+  min-height: 35px;
+  padding:60px 0px 0px 0px ;
+  background-color: #1b0b0b;
+}
+/* Container for single fetched beer */
+
+.beersugg {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  max-width: 220px;
+  align-content: center;
+  justify-content: flex-start;
+  height: 47vh;
+  background-color: white;
+  padding: 10px 50px 20px 50px;
+  margin-block-end: 10px;
+  margin-inline-end: 20px;
+  margin-inline-start: 20px;
+  opacity: 1;
+
+}
+.confirmation-text {
   margin-left: 80px;
+  margin-top: 50px;
   margin-right: 10vw;
   min-width: 14vw;
   text-align: end;
@@ -55,37 +168,15 @@ p {
   font-weight: 200;
 }
 
-.beersugg {
-  display: flex;
-  flex-direction: column;
-  min-width: 220px;
-  max-width: 220px;
-  align-content: center;
-  justify-content: flex-end;
-  height: 450px;
-  background-color: white;
-  padding: 10px 50px 10px 50px;
-  margin-block-end: 10px;
-  margin-inline-end: 40px;
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 1s;
-}
-.information-empty{
 
-  font-family: "Lora", serif;
-  height: 60vh;
-  align-items: center;
-  
-  
-  font-size: 35px;
-  color:#9d8d84;
-  margin:auto;
-  display: flex;
-
+.beersugg:hover {
+	transition: box-shadow 200ms;
+	box-shadow: 0px 0px 10px #eae4dd;
+	-webkit-box-shadow: 0px 0px 10px #eae4dd;
+	-moz-box-shadow: 0px 0px 10px #eae4dd;
 }
+
+
 .staticinfo {
   width: 18vw;
   margin-right: 40px;
@@ -94,7 +185,8 @@ p {
 .flex-horizontal-wrapper {
   display: flex;
   flex-direction: row;
-  background-color: #faf8f4;
+  min-height: 67vh;
+   background-color: #faf8f4;
 }
 
 .legend {
@@ -110,28 +202,35 @@ p {
 }
 .hopimg {
   height: 44vh;
-
   animation-name: slideIn;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-duration: 0.8s;
 }
 .beerimg {
-  max-width: 60px;
+  max-width: 2.6vw;
   display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  
+}
+
+.beerimg-container {
+  min-width: 60px;
+  display: flex;
+  min-height: 23vh;
   align-self: center;
   justify-content: center;
-
+  margin-block-start: -75px;
 }
 .filteredbeers {
   display: flex;
+  height: 100px;
+  flex-direction: row;
   background-color: #1b0b0b;
-
-  
 }
 
 input[type="text"] {
-  
   width: 80vw;
   height: 10vh;
   opacity: 0.9;
@@ -155,7 +254,6 @@ input[type="text"] {
   animation-duration: 1s;
 }
 
-
 button:focus,
 input:focus {
   outline: none;
@@ -177,7 +275,6 @@ input:focus {
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-duration: 1s;
-
 }
 .button:hover {
   background-color: #f2eee6;
@@ -209,11 +306,10 @@ input:focus {
 }
 
 .inputform {
-  
   display: flex;
   align-items: center;
   flex-direction: row;
-  min-height: 25vh;
+  min-height: 22vh;
   background-image: url("../src/img/header.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -222,7 +318,7 @@ input:focus {
 }
 .legend-container {
   overflow: hidden;
-  max-height: 200px;
+  max-height: 180px;
   padding-left: 2vw;
   display: flex;
   margin-left: auto;
@@ -233,14 +329,13 @@ input:focus {
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-duration: 0.8s;
-
 }
 
 .footer {
   display: flex;
   position: fixed;
-  bottom:0px;
-  width:100%;
+  bottom: 0px;
+  width: 100%;
   min-height: 70px;
   background-color: #ede8e3;
   font-family: "Medula One", cursive;
@@ -250,10 +345,6 @@ input:focus {
   color: #c7b4a5;
   align-items: center;
   padding-left: 30px;
-
-
- 
- 
 }
 
 .App-header {
@@ -290,29 +381,26 @@ input:focus {
 }
 
 @keyframes slideDown {
-	0% {
-	  transform: translateY(-20px);
-	  opacity: 0;
-
-	}
-	100% {
-	  transform: translateY(0);
-	  opacity: 1;
-	}
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
   }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-  @keyframes slideIn {
-    0% {
-      transform: translateX(-20px);
-      opacity: 0;
-  
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    }
-
+@keyframes slideIn {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 .flex-container::-webkit-scrollbar {
   height: 8px;

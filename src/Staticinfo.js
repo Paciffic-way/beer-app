@@ -8,7 +8,7 @@ class Staticinfo extends Component {
       beers: []
     };
   }
-
+//Just a graphic element, no functionality here
   render() {
     return (
       <div className="staticinfo">

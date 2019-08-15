@@ -16,11 +16,13 @@ class Input extends Component {
   handleSearch = () => {
     this.makeApiCall(this.state.searchValue);
   };
-
+//Lifting the state up to App.js
   liftUp = item => {
     this.props.fetchedbeers(item);
     console.log("przekazane piwa to ", item);
   };
+
+  //Getting beers from API that match the input
 
   makeApiCall = searchInput => {
     var searchUrl = `https://api.punkapi.com/v2/beers?food=${searchInput}`;
@@ -29,8 +31,17 @@ class Input extends Component {
         return response.json();
       })
       .then(jsonData => {
-        this.setState({ meals: jsonData });
+        if (jsonData.length === 0) {
+        this.setState({ meals: "nothing" });
+        this.liftUp("nothing");
+
+        }
+
+        else {
+
+          this.setState({ meals: jsonData });
         this.liftUp(jsonData);
+        }
       });
   };
 
@@ -51,7 +62,9 @@ class Input extends Component {
           }}
         />
 
-        {this.state.searchValue ? (
+        {
+         //If searchbar is empty, do nothing 
+          this.state.searchValue ? (
           <button className="button" onClick={this.handleSearch}>
             Search
           </button>

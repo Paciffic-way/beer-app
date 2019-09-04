@@ -8,6 +8,8 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef(); // Create a ref object
+
     this.state = {
       loaded: false,
       beers: []
@@ -31,10 +33,19 @@ class App extends Component {
   handleFetchedBeers(item) {
     this.setState({ fetchedbeers: item });
   }
-
+  
+ 
   componentDidMount() {
     this.fetchAllBeers();
+
   }
+
+
+
+
+
+  scrollToMyRef = () =>
+    window.scrollTo({ top: this.myRef.current.offsetTop, behavior: "smooth" });
 
   render() {
     return (
@@ -42,23 +53,28 @@ class App extends Component {
         <Input fetchedbeers={this.handleFetchedBeers.bind(this)} />
 
         {//Conditionals so the component "Beerfilter" returning all the beer food-pairings doesn't run before fetch
-          this.state && this.state.loaded && (
+        this.state && this.state.loaded && (
           <Beerfilter
             isloaded={this.state.loaded}
             beerprops={this.state.beers}
           />
         )}
 
-        <div className="flex-horizontal-wrapper">
+        <div className="flex-horizontal-wrapper" ref={this.myRef}>
           {//Conditionals blocking render, and showing prompt text on the first visit
           this.state.fetchedbeers ? <Staticinfo /> : ""}
           {this.state.fetchedbeers ? (
-            <Retrievedbeers meals={this.state.fetchedbeers} />
+            <Retrievedbeers
+              meals={this.state.fetchedbeers}
+              scroll={this.scrollToMyRef}
+            />
           ) : (
             <h5>Please type the food in searchbar</h5>
           )}
         </div>
-        <a href="https://github.com/Paciffic-way/beer-app"><div className="footer">See on github</div></a>
+        <a href="https://github.com/Paciffic-way/beer-app">
+          <div className="footer">See on github</div>
+        </a>
       </div>
     );
   }

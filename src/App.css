@@ -13,7 +13,7 @@ body {
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  max-height: 100px;
   pointer-events: none;
 }
 
@@ -234,34 +234,7 @@ flex-wrap: wrap;
   background-color: #1b0b0b;
 }
 
-input[type="text"] {
-  width: 80vw;
-  height: 10vh;
-  opacity: 0.9;
-  border: none;
-  margin-left: auto;
-  font-family: "Lora", serif;
-  padding-bottom: 0;
-  padding-top: 0;
-  font-weight: 500;
-  font-size: 35px;
-  background-color: white;
-  background-image: url("../src/img/search.svg");
-  background-size: 20px 20px;
-  background-position: 2.5% 53%;
-  background-repeat: no-repeat;
-  padding-left: 4vw;
 
-  animation-name: slideDown;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 1s;
-}
-
-button:focus,
-input:focus {
-  outline: none;
-}
 
 .button {
   cursor: pointer;
@@ -269,7 +242,7 @@ input:focus {
   border: none;
   width: 6vw;
   font-family: "Lora", serif;
-  height: 10vh;
+  height: 8vh;
   font-weight: 500;
   margin: 50px 80px 50px 0px;
   padding-bottom: 0;
@@ -296,9 +269,28 @@ input:focus {
 
 .logo {
   display: flex;
-  width: 500px;
+  max-width: 500px;
+  min-width: 100px;
   align-self: center;
-  height: 12vh;
+  max-height: 12vh;
+  min-height: 5vh;
+  background-size: contain;
+  background-image: url("../src/img/logo.svg");
+  background-repeat: no-repeat;
+  margin: 40px 40px 40px 80px;
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+.logosmall {
+  display: flex;
+  max-width: 500px;
+  min-width: 100px;
+  align-self: center;
+  max-height: 12vh;
+  min-height: 5vh;
   background-size: contain;
   background-image: url("../src/img/logo.svg");
   background-repeat: no-repeat;
@@ -313,13 +305,101 @@ input:focus {
   display: flex;
   align-items: center;
   flex-direction: row;
-  min-height: 32vh;
+  min-height: 85vh;
   background-image: url("../src/img/header.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 
   background-color: grey;
 }
+.inputformbig {
+  display: none;
+  align-items: center;
+  flex-direction: row;
+  min-height: 100vh;
+  background-image: url("../src/img/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-color: grey;
+  
+}
+
+.inputformsmall {
+  display: flex;
+  position: fixed;
+  top:0;
+  z-index: 99;
+  align-items: center;
+  flex-direction: row;
+  max-height: 8vh;
+  background-image: url("../src/img/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-color: grey;
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+
+input[type="text"] {
+  width: 80vw;
+  height: 8vh;
+ 
+  opacity: 0.9;
+  border: none;
+  margin-left: auto;
+  font-family: "Lora", serif;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: white;
+  background-image: url("../src/img/search.svg");
+  background-size: 20px 20px;
+  background-position: 2.5% 53%;
+  background-repeat: no-repeat;
+  padding-left: 4vw;
+
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+.inputbig[type="text"] {
+  width: 80vw;
+  height: 10vh;
+  min-height: 2vh;
+  opacity: 0.9;
+  border: none;
+  margin-left: auto;
+  font-family: "Lora", serif;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-weight: 500;
+  font-size: 35px;
+  background-color: white;
+  background-image: url("../src/img/search.svg");
+  background-size: 20px 20px;
+  background-position: 2.5% 53%;
+  background-repeat: no-repeat;
+  padding-left: 4vw;
+
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
 .legend-container {
   overflow: hidden;
   max-height: 180px;

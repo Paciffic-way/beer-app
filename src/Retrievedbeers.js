@@ -1,15 +1,30 @@
 import React, { Component } from "react";
 
 class Retrievedbeers extends Component {
- 
+  
+  
 
+
+
+  handleScroll = () => this.props.scroll();
+  componentDidMount(){
+    this.handleScroll();
+  }
+
+  componentDidUpdate(){
+    this.handleScroll();
+  }
   render() {
+    
     let dummy = this.props.meals;
     const noresult = this.props.meals === "nothing";
 
+    
 
     return (
       <div>
+        
+       
         {noresult ? (
           //If nothing found
           <h5>Sorry, nothing found</h5>
@@ -53,6 +68,7 @@ class Retrievedbeers extends Component {
       
       
       }
+      
       </div>
     );
   }

@@ -232,6 +232,7 @@ flex-wrap: wrap;
   height: 100px;
   flex-direction: row;
   background-color: #1b0b0b;
+  overflow-x: hidden;
 }
 
 
@@ -270,14 +271,15 @@ flex-wrap: wrap;
 .logo {
   display: flex;
   max-width: 500px;
-  min-width: 100px;
+  flex-basis: 100%;
   align-self: center;
   max-height: 12vh;
-  min-height: 5vh;
+  min-height: 15vh;
+  margin-bottom: 30px;
   background-size: contain;
   background-image: url("../src/img/logo.svg");
   background-repeat: no-repeat;
-  margin: 40px 40px 40px 80px;
+  background-position: center;
   animation-name: slideDown;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
@@ -287,14 +289,14 @@ flex-wrap: wrap;
 .logosmall {
   display: flex;
   max-width: 500px;
-  min-width: 100px;
+  min-width: 10vw;
   align-self: center;
   max-height: 12vh;
   min-height: 5vh;
   background-size: contain;
   background-image: url("../src/img/logo.svg");
   background-repeat: no-repeat;
-  margin: 40px 40px 40px 80px;
+  background-position: 17%;
   animation-name: slideDown;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
@@ -304,7 +306,10 @@ flex-wrap: wrap;
 .inputform {
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   min-height: 85vh;
   background-image: url("../src/img/header.jpg");
   background-size: cover;
@@ -316,6 +321,7 @@ flex-wrap: wrap;
   display: none;
   align-items: center;
   flex-direction: row;
+
   min-height: 100vh;
   background-image: url("../src/img/header.jpg");
   background-size: cover;
@@ -371,7 +377,7 @@ input[type="text"] {
 }
 
 .inputbig[type="text"] {
-  width: 80vw;
+  width: 70vw;
   height: 10vh;
   min-height: 2vh;
   opacity: 0.9;
@@ -401,7 +407,7 @@ input:focus {
 }
 
 .legend-container {
-  overflow: hidden;
+ 
   max-height: 180px;
   padding-left: 2vw;
   display: flex;
@@ -502,4 +508,86 @@ input:focus {
 
 .flex-container::-webkit-scrollbar-thumb:hover {
   background: #453636;
+}
+
+
+@media screen and (max-width: 920px)  {
+
+.staticinfo {
+display: none;
+}
+.filteredbeers{
+  overflow-x: auto;
+}
+
+.flex-container{
+  justify-content: center;
+  max-width: none;
+}
+
+
+input[type="text"] {
+  width: 30vw;
+  height: 8vh;
+ 
+  opacity: 0.9;
+  border: none;
+  margin: 0;
+  font-family: "Lora", serif;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: white;
+  background-image: url("../src/img/search.svg");
+  background-size: 20px 20px;
+  background-position: 5% 53%;
+  background-repeat: no-repeat;
+  padding-left: 7vw;
+
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+.button{
+  margin:0;
+  justify-content: center;
+  min-width: 15vw;
+}
+.logosmall{
+  min-width:50vw;
+  margin:0;
+ background-position: 20%;
+}
+.beerimg{
+  max-width: 25%;
+}
+.beersugg{
+  margin-left:10px;
+  margin-right:10px;
+  margin-block-start:20px;
+
+  min-height: 70vh;
+}
+.beerimg-container{
+  margin-block-start: 0px;
+}
+.footer{
+  padding:0;
+}
+.beers{
+  box-sizing: border-box;
+  margin:0;
+}
+page-wrapper {
+  width:auto; overflow:hidden; max-width:auto;padding:0 .5em;
+  }
+.inputformsmall{
+  max-width:100%;
+}
+.flex-horizontal-wrapper{
+  max-width: 100%;
+}
 }
